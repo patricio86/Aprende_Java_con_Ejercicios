@@ -117,8 +117,8 @@ public class NotaAsignatura {
 		}
 		System.out.println("La nota de la asignatura con mayor nota:: " + notamax + " de la asignatura " + nombre);
 		
-		
 	}
+	
 	
 	
 }

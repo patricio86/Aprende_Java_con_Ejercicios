@@ -3,8 +3,6 @@ import java.util.*;
 public class Principal {
 
 	static Scanner sc = new Scanner(System.in);
-	static String nombre;
-	static int nLeng, nMate, nHisto, nIngles, nLatin, nFilosofia;
 	
 	public static void main(String[]args) {
 		
@@ -19,6 +17,7 @@ public class Principal {
 		
 			NotaAsignatura alumno[] = new NotaAsignatura[num_alumnos];
 			registraraleatorioletras(alumno);
+			registraraleatoriociencias(alumno);
 			NotaAsignatura.comprobarMejorNotaletras(alumno);
 			
 	}
@@ -26,6 +25,8 @@ public class Principal {
 	
 
 	public static void registraraleatorioletras(NotaAsignatura alumno[]) {
+		String nombre;
+		int nLeng, nMate, nHisto, nIngles, nLatin, nFilosofia;
 		for(int i=0;i<alumno.length;i++) {
 			System.out.println("Introduce un nombre");
 			nombre = sc.next();
@@ -43,6 +44,28 @@ public class Principal {
 			nFilosofia = (int)(11*(Math.random())+0);
 			
 		alumno[i] = new NotaAsignatura(nombre, nLeng, nMate, nHisto, nIngles, nLatin, nFilosofia);
+		System.out.println("Proceso de obtencion de notas terminado para: " + alumno[i].getNombre());
+		}
+	}
+	
+	public static void registraraleatoriociencias(NotaAsignatura alumno[]) {
+		 String nombre;
+		 int nLeng, nMate, nHisto, nIngles, nFisica;
+		for(int i=0;i<alumno.length;i++) {
+			System.out.println("Introduce un nombre");
+			nombre = sc.next();
+			System.out.println("Nota programacion");
+			nLeng = (int)(11*(Math.random())+0);
+			System.out.println("Nota de Bases de Datos");
+			nMate = (int)(11*(Math.random())+0);
+			System.out.println("Nota de Sistemas");
+			nHisto = (int)(11*(Math.random())+0);
+			System.out.println("Nota de Entornos");
+			nIngles = (int)(11*(Math.random())+0);
+			System.out.println("Nota de Fol");
+			nFisica = (int)(11*(Math.random())+0);
+			
+		alumno[i] = new NotaAsignatura(nombre, nLeng, nMate, nHisto, nIngles, nFisica);
 		System.out.println("Proceso de obtencion de notas terminado para: " + alumno[i].getNombre());
 		}
 	}
