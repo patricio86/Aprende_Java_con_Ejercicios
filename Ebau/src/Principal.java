@@ -6,22 +6,19 @@ public class Principal {
 	
 	public static void main(String[]args) {
 		
-		int num_alumnos;
+	
 		System.out.println("#######Bienvenido al programa#######, \n #######para calcular la media de las notas#######");
 		System.out.println("####################################################");
-		System.out.println("Cuantos alumnos quieres guardar:_");
 		System.out.println("####################################################");
-		do {
-			num_alumnos = sc.nextInt();
-		}while(num_alumnos<1);	
+
 		
-			NotaAsignatura alumno[] = new NotaAsignatura[num_alumnos];
+			NotaAsignatura alumno[] = new NotaAsignatura[2];
 			registraraleatorioletras(alumno);
-			registraraleatoriociencias(alumno);
+			//registraraleatoriociencias(alumno);
 			NotaAsignatura.comprobarMejorNotaletras(alumno);
-			
+			//NotaAsignatura.comprobarMejorNotaciencias(alumno);
 	}
-	
+											
 	
 
 	public static void registraraleatorioletras(NotaAsignatura alumno[]) {
@@ -69,7 +66,6 @@ public class Principal {
 		System.out.println("Proceso de obtencion de notas terminado para: " + alumno[i].getNombre());
 		}
 	}
-	
 	
 	
 	

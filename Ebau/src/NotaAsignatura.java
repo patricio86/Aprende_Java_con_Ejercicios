@@ -1,8 +1,8 @@
 
 public class NotaAsignatura {
 
-	String nombre;
-	int nLeng, nMate, nHisto, nIngles, nLatin, nFilosofia, nFisica;
+	private String nombre;
+	private int nLeng, nMate, nHisto, nIngles, nLatin, nFilosofia, nFisica;
 	
 	public NotaAsignatura(String nombre, int nLeng, int nMate, int nHisto, int nIngles, int nLatin, int nFilosofia) {
 		this.nombre = nombre;
@@ -24,27 +24,27 @@ public class NotaAsignatura {
 		this.nFisica = nFisica;
 		
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public int getnLeng() {
 		return nLeng;
 	}
-	
+
 	public void setnLeng(int nLeng) {
 		this.nLeng = nLeng;
 	}
-	
-	public  int getnMate() {
+
+	public int getnMate() {
 		return nMate;
 	}
-	
+
 	public void setnMate(int nMate) {
 		this.nMate = nMate;
 	}
@@ -90,6 +90,32 @@ public class NotaAsignatura {
 	}
 	
 	
+	public static void comprobarMejorNotaciencias(NotaAsignatura alumno[]) {
+		int notamax = 0;
+		String nombre = "";
+		for(int i=0;i<alumno.length;i++) {
+			if(notamax<alumno[i].getnLeng()) {
+				notamax=alumno[i].getnLeng();
+				nombre = "Lengua";
+			} if (alumno[i].getnLeng()<alumno[i].getnMate()){
+				notamax=alumno[i].getnMate();
+				nombre = "Matematicas";
+			} if (alumno[i].getnMate()<alumno[i].getnHisto()){
+				notamax=alumno[i].getnHisto();
+				nombre = "Historia";
+			} if (alumno[i].getnHisto()<alumno[i].getnIngles()) {
+				notamax=alumno[i].getnIngles();
+				nombre = "Ingles";
+			} if (alumno[i].getnIngles()<alumno[i].getnFisica()) {
+				notamax=alumno[i].getnFisica();
+				nombre = "Fisica";
+			}
+		
+			System.out.println("La nota de " + alumno[i].getNombre() + " de la asignatura con mayor nota: " + notamax + " de la asignatura " + nombre);
+		}
+		
+	}
+
 	public static void comprobarMejorNotaletras(NotaAsignatura alumno[]) {
 		int notamax = 0;
 		String nombre = "";
@@ -97,29 +123,26 @@ public class NotaAsignatura {
 			if(notamax<alumno[i].getnLeng()) {
 				notamax=alumno[i].getnLeng();
 				nombre = "Lengua";
-			} else if (notamax<alumno[i].getnMate()){
+			} if (alumno[i].getnLeng()<alumno[i].getnMate()){
 				notamax=alumno[i].getnMate();
-				nombre = "Mate";
-			} else if (notamax<alumno[i].getnHisto()){
+				nombre = "Matematicas";
+			} if (alumno[i].getnMate()<alumno[i].getnHisto()){
 				notamax=alumno[i].getnHisto();
-				nombre = "Histo";
-			} else if (notamax<alumno[i].getnIngles()) {
+				nombre = "Historia";
+			} if (alumno[i].getnHisto()<alumno[i].getnIngles()) {
 				notamax=alumno[i].getnIngles();
 				nombre = "Ingles";
-			} else if (notamax<alumno[i].getnLatin()) {
+			} if (alumno[i].getnIngles()<alumno[i].getnLatin()) {
 				notamax=alumno[i].getnLatin();
 				nombre = "Latin";
-			} else if (notamax<alumno[i].getnFilosofia()) {
+			} if (alumno[i].getnLatin()<alumno[i].getnFilosofia()) {
 				notamax=alumno[i].getnFilosofia();
 				nombre = "Filosofia";
 			}
-		
+			
+		System.out.println("La nota de " + alumno[i].getNombre() + " de la asignatura con mayor nota: " + notamax + " de la asignatura " + nombre);
 		}
-		System.out.println("La nota de la asignatura con mayor nota:: " + notamax + " de la asignatura " + nombre);
 		
+	
 	}
-	
-	
-	
 }
-
