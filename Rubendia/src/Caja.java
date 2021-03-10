@@ -11,7 +11,7 @@ public class Caja {
 		this.nombre = nombre;
 	}
 
-	public Caja(String nombre, double ingresar, double retirar) {
+	public Caja(String nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -39,29 +39,43 @@ public class Caja {
 		this.saldo = saldo;
 	}
 	
-	public double ingresar(Caja dinero[]) {
+	public void ingresar(Caja dinero[]) {
+		Scanner sc = new  Scanner(System.in);
 		double saldoingresar;
+		System.out.println("Elige una caja por la que quieras pasar:_ \n 0 (Caja 1) \n 1 (Caja 2) \n 2 (Caja 3) ");
+		int numcaja = sc.nextInt();
 		System.out.println("Cantidad a pagar:_");
-		Scanner sc = new  Scanner(System.in);
 		saldoingresar = sc.nextDouble();
-		System.out.println("Elige una caja por la que quieras pasar:_ \n 1 \n 2 \n 3 ");
-		int numcaja = sc.nextInt();
-		dinero[numcaja].setSaldo(saldoingresar); 
-		return dinero[numcaja].getSaldo();
+		int ingresado = (int) (dinero[numcaja].getSaldo() + saldoingresar);
+		dinero[numcaja].setSaldo(ingresado);
+		System.out.println("El cliente pasa por la " + dinero[numcaja].getId() + " e ingresa " + saldoingresar);
 	}
 	
-	
-	/*public double retirar(Caja dinero[]) {
-		double saldoretirar;
-		System.out.println("Cantidad a retirar:_");
+	public void retirar(Caja dinero[]) {
 		Scanner sc = new  Scanner(System.in);
-		saldoretirar = sc.nextDouble();
-		System.out.println("Elige una caja por la que quieras pasar:_ \n 1 \n 2 \n 3 ");
+		double saldoretirar;
+		System.out.println("Elige una caja por la que quieras pasar:_ \n 0 (Caja 1) \n 1 (Caja 2) \n 2 (Caja 3) ");
 		int numcaja = sc.nextInt();
-		
-		
-		return totalcaja;
+		System.out.println("Cantidad a retirar por Ruben:_");
+		saldoretirar = sc.nextDouble();
+		int retirado = (int) (dinero[numcaja].getSaldo() - saldoretirar);
+		dinero[numcaja].setSaldo(retirado);
+		System.out.println("Baja Ruben y retira " + saldoretirar + " de la " + dinero[numcaja].getId());
 	}
-	*/
 	
+	public static void transpasar(Caja dinero[]) {
+		Scanner sc = new  Scanner(System.in);
+		double saldotranspasar;
+		System.out.println("Elige una caja que quieres retirar dinero:_ \n 0 (Caja 1) \n 1 (Caja 2) \n 2 (Caja 3) ");
+		int numcaja1 = sc.nextInt();
+		System.out.println("Elige una caja para ingresar ese dinero:_ \n 0 (Caja 1) \n 1 (Caja 2) \n 2 (Caja 3) ");
+		int numcaja2 = sc.nextInt();
+		System.out.println("Cantidad a transpasar por el " + dinero[numcaja1].getNombre() + " :_");
+		saldotranspasar = sc.nextDouble();
+		int retirado = (int) (dinero[numcaja1].getSaldo() - saldotranspasar);
+		dinero[numcaja1].setSaldo(retirado);
+		int ingresado = (int) (dinero[numcaja2].getSaldo() + saldotranspasar);
+		dinero[numcaja2].setSaldo(ingresado);
+		System.out.println("El " + dinero[numcaja1].getNombre() + " de la " + dinero[numcaja1].getId() + " le pide " + saldotranspasar + " al " + dinero[numcaja2].getNombre() + " de la " + dinero[numcaja2].getId());
+	}
 }
