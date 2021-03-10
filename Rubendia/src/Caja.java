@@ -8,6 +8,7 @@ public class Caja {
 	public Caja(String id, String nombre, double saldo) {
 		this.id = id;
 		this.saldo = saldo;
+		this.nombre = nombre;
 	}
 
 	public Caja(String nombre, double ingresar, double retirar) {
