@@ -10,6 +10,8 @@ public class Principal {
 		Caja persona1 = new Caja("Cliente");
 		Caja persona2 = new Caja("Ruben");
 	
+		System.out.println("Bienvenido a la gestion de las cajas del supermercado RubenDia");
+		System.out.println("##############################################################");
 		System.out.println("Situacion actual: " + dinero[0].getId() + " tiene " + dinero[0].getSaldo() + " €, " + dinero[1].getId() + " tiene " + dinero[1].getSaldo() + " €, " + dinero[2].getId() + " tiene " + dinero[2].getSaldo() + " €, ");
 		persona1.ingresar(dinero);
 		System.out.println("Situacion actual: " + dinero[0].getId() + " tiene " + dinero[0].getSaldo() + " €, " + dinero[1].getId() + " tiene " + dinero[1].getSaldo() + " €, " + dinero[2].getId() + " tiene " + dinero[2].getSaldo() + " €, ");
@@ -22,7 +24,7 @@ public class Principal {
 		persona1.ingresar(dinero);
 		System.out.println("Situacion actual: " + dinero[0].getId() + " tiene " + dinero[0].getSaldo() + " €, " + dinero[1].getId() + " tiene " + dinero[1].getSaldo() + " €, " + dinero[2].getId() + " tiene " + dinero[2].getSaldo() + " €, ");
 		Caja.transpasar(dinero);
-		
+		System.out.println("Situacion actual: " + dinero[0].getId() + " tiene " + dinero[0].getSaldo() + " €, " + dinero[1].getId() + " tiene " + dinero[1].getSaldo() + " €, " + dinero[2].getId() + " tiene " + dinero[2].getSaldo() + " €, ");
 	
 	}
 	
