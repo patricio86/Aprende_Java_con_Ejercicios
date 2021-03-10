@@ -6,17 +6,43 @@ public class Principal {
 	
 	public static void main(String[]args) {
 		
-	
+		int opcionmenu;
+		boolean continua =true;
+		String fin;
 		System.out.println("#######Bienvenido al programa#######, \n #######para calcular la media de las notas#######");
 		System.out.println("####################################################");
 		System.out.println("####################################################");
-
-		
-			NotaAsignatura alumno[] = new NotaAsignatura[2];
-			registraraleatorioletras(alumno);
-			//registraraleatoriociencias(alumno);
-			NotaAsignatura.comprobarMejorNotaletras(alumno);
-			//NotaAsignatura.comprobarMejorNotaciencias(alumno);
+		NotaAsignatura alumno[] = new NotaAsignatura[2];
+		do {
+		System.out.println("Elije una de los dos opciones para \n 1 - Registrar y saber las medias de los alumnos de letras. \n 2 - Registrar y saber las medias de los alumnos de letras.");
+		opcionmenu = sc.nextInt();
+		switch(opcionmenu) {
+			case 1:
+				registraraleatorioletras(alumno);
+				NotaAsignatura.comprobarMejorNotaletras(alumno);
+				System.out.println("Desea continuar con la filtracion ¿SI o NO?:_");
+				fin = sc.next();
+				if(fin.equalsIgnoreCase("si")) {
+					continua = true;
+				}else {
+					continua = false;
+					System.out.println("Adios");
+				}
+				break;
+			case 2:
+				registraraleatoriociencias(alumno);
+				NotaAsignatura.comprobarMejorNotaciencias(alumno);
+				System.out.println("Desea continuar con la filtracion ¿SI o NO?:_");
+				fin = sc.next();
+				if(fin.equalsIgnoreCase("si")) {
+					continua = true;
+				}else {
+					continua = false;
+					System.out.println("Adios");
+				}
+				break;
+		}
+		}while(continua == true);
 	}
 											
 	
