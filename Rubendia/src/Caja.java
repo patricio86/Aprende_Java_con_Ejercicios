@@ -9,7 +9,7 @@ public class Caja {
 		this.id = id;
 		this.saldo = saldo;
 	}
-	
+
 	public Caja(String nombre, double ingresar, double retirar) {
 		this.nombre = nombre;
 	}
@@ -45,22 +45,22 @@ public class Caja {
 		saldoingresar = sc.nextDouble();
 		System.out.println("Elige una caja por la que quieras pasar:_ \n 1 \n 2 \n 3 ");
 		int numcaja = sc.nextInt();
-		double suma = saldoingresar + dinero[numcaja].getSaldo();
-		double totalcaja = dinero[numcaja].getSaldo() + suma;
-		return totalcaja;
+		dinero[numcaja].setSaldo(saldoingresar); 
+		return dinero[numcaja].getSaldo();
 	}
 	
-	public double retirar(Caja dinero[]) {
+	
+	/*public double retirar(Caja dinero[]) {
 		double saldoretirar;
-		System.out.println("Cantidad a pagar:_");
+		System.out.println("Cantidad a retirar:_");
 		Scanner sc = new  Scanner(System.in);
 		saldoretirar = sc.nextDouble();
 		System.out.println("Elige una caja por la que quieras pasar:_ \n 1 \n 2 \n 3 ");
 		int numcaja = sc.nextInt();
-		double quita = dinero[numcaja].getSaldo() - saldoretirar;
-		double totalcaja = dinero[numcaja].getSaldo() - quita;
+		
+		
 		return totalcaja;
 	}
-	
+	*/
 	
 }
