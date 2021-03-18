@@ -6,7 +6,7 @@ public class Principal {
 	
 	public static void main(String[]args) {
 		
-		Tiempo meteo [] = new Tiempo [7];
+		Tiempo meteo [] = new Tiempo [2];
 		String opcion1;
 		boolean continua = true;
 			
@@ -264,36 +264,47 @@ public class Principal {
 	
 	
 		public static void contartipotiempo(Tiempo meteo []) {
-			int n = 0, s = 0, ni = 0, l = 0;
-			for(int i=1; i<meteo.length; i++) {
+			int i = 1, n = 0, s = 0, ni = 0, l = 0;
+			for(i=1; i<meteo.length; i++) {
 				if("NUBES".equalsIgnoreCase(meteo[i].getTiempo())) {
-					System.out.println("Dias " + meteo[i].getTiempo() + " " + n++ + " " + meteo[i].getCiudad() + " "
+					n++;
+					System.out.println("Dias " + meteo[i].getTiempo() + " " + n + " " + meteo[i].getCiudad() + " "
 							+ " " + meteo[i].getDia() + "-" + meteo[i].getMes() + "-" + meteo[i].getAño());
-					
 				}
 				
 		
 				if("SOL".equalsIgnoreCase(meteo[i].getTiempo())) {
-					System.out.println("Dias " + meteo[i].getTiempo() + " "  + s++ + " " + meteo[i].getCiudad() + " "
+					s++;
+				System.out.println("Dias " + meteo[i].getTiempo() + " "  + s + " " + meteo[i].getCiudad() + " "
 							+ " " + meteo[i].getDia() + "-" + meteo[i].getMes() + "-" + meteo[i].getAño());
-					
 				
 				}	
 				
 				
 				if("NIEBLA".equalsIgnoreCase(meteo[i].getTiempo())) {
-					System.out.println("Dias " + meteo[i].getTiempo() + " " + ni++ + " " + meteo[i].getCiudad() + " "
+					ni++;
+				System.out.println("Dias " + meteo[i].getTiempo() + " " + ni + " " + meteo[i].getCiudad() + " "
 							+ " " + meteo[i].getDia() + "-" + meteo[i].getMes() + "-" + meteo[i].getAño());
 					
 				}
 				
 				
 				if("LLUVIA".equalsIgnoreCase(meteo[i].getTiempo())) {
-					System.out.println("Dias " + meteo[i].getTiempo() + " " + l++ + " " + meteo[i].getCiudad() + " "
+					l++;
+				System.out.println("Dias " + meteo[i].getTiempo() + " " + l + " " + meteo[i].getCiudad() + " "
 							+ " " + meteo[i].getDia() + "-" + meteo[i].getMes() + "-" + meteo[i].getAño());
 		
 				}	
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 		
 		public static void contartipopeligroso(Tiempo meteo []) {
